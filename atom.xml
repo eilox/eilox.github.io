@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eilox.github.io</id>
-    <title>Gridea</title>
-    <updated>2021-01-16T09:28:30.708Z</updated>
+    <title>Edge</title>
+    <updated>2021-01-18T01:45:23.372Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eilox.github.io"/>
     <link rel="self" href="https://eilox.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://eilox.github.io/images/avatar.png</logo>
     <icon>https://eilox.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, Edge</rights>
     <entry>
         <title type="html"><![CDATA[pythonchanllenge]]></title>
         <id>https://eilox.github.io/post/pythonchanllenge/</id>
@@ -22,15 +22,20 @@
         <content type="html"><![CDATA[<p>http://www.pythonchallenge.com/<br>
 页面提示目前有33关。</p>
 <!-- more -->
-<p>第0关<br>
-http://www.pythonchallenge.com/pc/def/0.html<br>
-Hint: try to change the URL address.提示改变url地址，图片的提示是2、3、8，那就直接把url最后的“0.html”改成“238.html”试下。<br>
-http://www.pythonchallenge.com/pc/def/238.html<br>
-访问过去，提示“No... the 38 is a little bit above the 2...”，也就是说思路没错，只不过数字搞错了，38在画面上比2高一点，那就试一下2的38次方。虽然只是简单的数学计算，但既然是pythonchallenge，那就写个代码搞。</p>
-<p>print(2**38)<br>
-直接命令行模式搞一下，输出结果是274877906944，改成274877906944.html，成功进入第1关</p>
-<p>第1关<br>
-http://www.pythonchallenge.com/pc/def/map.html</p>
+<h1 id="第0关">第0关</h1>
+<p><a href="http://www.pythonchallenge.com/pc/def/0.html">http://www.pythonchallenge.com/pc/def/0.html</a></p>
+<blockquote>
+<p>Hint: try to change the URL address.<br>
+提示改变url地址，图片的提示是2、3、8，那就直接把url最后的“0.html”改成“238.html”试下。<br>
+访问过去，提示如下：<br>
+No... the 38 is a little bit above the 2...<br>
+也就是说思路没错，只不过数字搞错了，38在画面上比2高一点，那就试一下2的38次方。命令行模式打印一下。</p>
+</blockquote>
+<pre><code class="language-python">print(2**38)
+</code></pre>
+<p>输出结果是274877906944，url末尾改成274877906944.html，成功进入第1关</p>
+<h1 id="第1关">第1关</h1>
+<p><a href="http://www.pythonchallenge.com/pc/def/map.html">http://www.pythonchallenge.com/pc/def/map.html</a></p>
 <p>这关给了个对应关系，K-M，O-Q，E-G，总结规律就是将密文中的每个字母替换成其在字母表中后方的第二个字母。如果是y和z，则回到字母表开头，分别对应a、b。<br>
 思路很简单，每个字符转ascii码，将ascii+2再转回字符，就能得到明文。不过里边的空格和标点符号都是明文，需要排除掉。</p>
 <pre><code class="language-python">sentence = &quot; g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj. &quot;
@@ -45,15 +50,23 @@ for i in secret:
         sentence += chr(ord(i)+2)
 #print(sentence)
 </code></pre>
-<p>输出内容<br>
-i hope you didnt translate it by hand. thats what computers are for. doing it in by hand is inefficient and that's why this text is so long. using string.maketrans*+ is recommended. now apply on the url.<br>
-翻译出了可读的句子，那证明解题方法没问题。提示需要把这套解密方法用在url上，那么肯定是要把map.html替换掉。把map放进程序，解出来的明文是ocr，那么下一关的地址应该就是ocr.html了。<br>
-这里关卡设计者其实想让我们用string.maketrans*+解题。</p>
-<p>第2关<br>
-http://www.pythonchallenge.com/pc/def/ocr.html</p>
+<p>输出内容</p>
+<blockquote>
+<p>i hope you didnt translate it by hand. thats what computers are for. doing it in by hand is inefficient and that's why this text is so long. using string.maketrans*+ is recommended. now apply on the url.</p>
+</blockquote>
+<p>翻译出了可读的句子，那证明解题方法没问题。提示需要把这套解密方法用在url上，那么肯定是要把map.html替换掉。把map放进程序，解出来的明文是ocr，那么下一关的地址应该就是ocr.html了。<br>
+这里关卡设计者其实想让我们用string.maketrans*解题。</p>
+<h1 id="第2关">第2关</h1>
+<p><a href="http://www.pythonchallenge.com/pc/def/ocr.html">http://www.pythonchallenge.com/pc/def/ocr.html</a></p>
+<blockquote>
 <p>recognize the characters. maybe they are in the book,<br>
-but MAYBE they are in the page source.<br>
-已经是明示找网页源代码了。源代码里可以直接看到注释代码内有提示“find rare characters in the mess below:”，紧跟着一堆乱码。既然是找稀有的字符，可能是需要统计这段乱码里各个字符出现的次数。</p>
+but MAYBE they are in the page source.</p>
+</blockquote>
+<p>已经是明示找网页源代码了。源代码里可以直接看到注释代码内有提示</p>
+<blockquote>
+<p>“find rare characters in the mess below:”</p>
+</blockquote>
+<p>紧跟着一堆乱码。既然是找稀有的字符，可能是需要统计这段乱码里各个字符出现的次数。</p>
 <pre><code class="language-python">secret = &quot;一堆乱码，这里就不贴出来了&quot;
 pivot = {}
 for i in secret:
@@ -66,7 +79,7 @@ print(pivot)
 <p>输出结果<br>
 {'%': 6104, '$': 6046, '@': 6157, '_': 6112, '^': 6030, '#': 6115, ')': 6186, '&amp;': 6043, '!': 6079, '+': 6066, ']': 6152, '*': 6034, '}': 6105, '[': 6108, '(': 6154, '{': 6046, 'e': 1, 'q': 1, 'u': 1, 'a': 1, 'l': 1, 'i': 1,<br>
 't': 1, 'y': 1}</p>
-<p>其中e、q、u、a、l、i、t、y只出现一次，正好构成单词equality，思路是正确的，下一关应该是equality.html</p>
+<p>其中e、q、u、a、l、i、t、y只出现一次，正好构成单词equality，思路是正确的，下一关应该是将url末尾改成equality.html。</p>
 <p>第三关<br>
 http://www.pythonchallenge.com/pc/def/equality.html</p>
 <p>我是没看懂这个图的意思，不过提示 One small letter, surrounded by EXACTLY three big bodyguards on each of its sides. 这关可能还是要在网页源码上做文章。查看源码，果然注释里又是一堆乱码。<br>
