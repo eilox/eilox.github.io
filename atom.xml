@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eilox.github.io</id>
     <title>Edge</title>
-    <updated>2021-01-18T01:45:23.372Z</updated>
+    <updated>2021-02-21T03:38:06.442Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eilox.github.io"/>
     <link rel="self" href="https://eilox.github.io/atom.xml"/>
@@ -11,7 +11,210 @@
     <icon>https://eilox.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Edge</rights>
     <entry>
-        <title type="html"><![CDATA[pythonchanllenge]]></title>
+        <title type="html"><![CDATA[AM4平台装机的第二次尝试]]></title>
+        <id>https://eilox.github.io/post/am4-ping-tai-zhuang-ji-de-di-er-ci-chang-shi/</id>
+        <link href="https://eilox.github.io/post/am4-ping-tai-zhuang-ji-de-di-er-ci-chang-shi/">
+        </link>
+        <updated>2021-01-18T01:45:53.000Z</updated>
+        <content type="html"><![CDATA[<p>年前给公司装了台办公用机，3400G+A320平台，8G 3000的内存，256G Sata SSD，轻松跑起来没什么压力。这是我第一次装AM4平台的主机，后续矿卡P106-系列降价了收一个回来装在办公主机上折腾一下。</p>
+<p>近期可能接一个关于数据分析的项目，我的笔记本那孱弱的锐龙R5 3500U实在是带不动，所以近期着手装一台自用的机器。这是我第二次尝试装AM4平台的主机。</p>
+<h1 id="需求分析">需求分析</h1>
+<p>目标很简单：AM4平台、MATX小机箱、所有东西2000块以内搞定，可以用库存货。💴2000块以内搞不定，就砍掉显卡以后再说。</p>
+<h2 id="1平台选择">1.平台选择</h2>
+<p>一开始我是打算在2600和3500X之间做选择的。在图拉丁吧学习了一段时间后，抱着试试做个垃圾佬的心态想强上E5 1620+X79平台。论证过程中考虑到多数图吧基佬认为新手上E5容易坑，决定优先考虑普通平台。在公司摸鱼看了半下午CPU天梯图之后，发现能买得起的平台运算能力根本达不到我的要求，最终选定2600。<br>
+主板这块的考虑就很简单了,选一个接口全一点的B350就可以。</p>
+<h2 id="2大件">2.大件</h2>
+<ul>
+<li><strong>内存 ：</strong> 不想折腾，直接上DDR4 3000MHz 16G的，原因是比8x2便宜一些。双通道固然有提升，但这个提升留给以后吧，再升级插个一样的条子上去就完事了；</li>
+<li><strong>电源：</strong> 万一以后想玩个游戏什么的，得预留好功率和显卡供电口，直接按显卡8+8找；</li>
+<li><strong>硬盘：</strong> 如果主板带M.2接口，优选256G Nvme，如果没有直接上个Sata3 SSD问题也不大，毕竟跑数据对硬盘的速度没有太高的要求；</li>
+<li><strong>显卡：</strong> 显卡价格飞涨，我不想当韭菜。弄个亮机卡就行，我只有玩GTA5的需求，扒一扒有什么能用的老矿渣，现阶段涨也涨不了几个钱；</li>
+</ul>
+<h2 id="3外设">3.外设</h2>
+<ul>
+<li><strong>显示器：</strong> 平时肯定更多的是远程连主机，偶尔玩玩游戏用电视或者投影就行了，这方面需求很佛系，所以并不需要显示器这种东西；</li>
+<li><strong>键鼠：</strong> 鼠标有个蓝牙的能凑合用，但没有键盘，可以考虑淘一套便宜的2.4G无线键鼠套装来用；</li>
+<li><strong>机箱：</strong> 之所以把机箱归成外设，因为觉得这玩意便宜能用就行，预算甚至跟键鼠持平。但看了网友们的图片后，决定搞个侧透小主机，机箱风扇搞纯白光，会很有未来感，也避免一个长的很商务或者很乡土气息的机箱摆在客厅里看着别扭；另外机箱里放个什么手办，也是值得考虑的事情；</li>
+</ul>
+<h2 id="4其他">4.其他</h2>
+<p>除了上述必要的配件外，由于需要便捷的远程开机，我还需要开机棒。</p>
+<h1 id="确定配置">确定配置</h1>
+<p>确定了上述需求之后，我在闲鱼、淘宝、京东、拼多多徘徊了许久，最先确定了CPU和主板。根据主板的兼容列表捋了一下，发现内存、硬盘都存在不确定性。因为首先确定了一块华擎的主板，而众所周知华擎特别能作妖，所以比较担心主板对两个存储部件的兼容性。不过参考了图拉丁吧很多图钉的经验，内存上阿斯加特应该问题不大。<br>
+至于硬盘，搜了一圈发现250G左右的Nvme价格都已经拉到了两百元的档位，本打算体验一下，结果发现这个档位卖的多的产品风评很差，比如光威骁将、阿斯加特AN2；卖的少的产品又到处是软文，心里很怕折腾，干脆不买了，降档回Sata3。作为一个网心云矿工的，手里有两块tigo S300系列的480G SSD，直接把家里一天只能赚6毛的盘拔了就可以了。<br>
+电源看附近城市有兄弟在卖鑫谷的GP600G，直接收入囊中。<br>
+显卡和开机棒这一波我不打算买了，等再研究研究。现阶段最重要的是赶紧把电脑组装起来投产。<br>
+综合考虑了价格和实用性，最后敲定以下主要部件配置单：</p>
+<table>
+<thead>
+<tr>
+<th><strong>部件</strong></th>
+<th><strong>型号</strong></th>
+<th><strong>频率</strong></th>
+<th><strong>容量/主频</strong></th>
+<th><strong>功率</strong></th>
+<th><strong>其他</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>AMD Ryezn 2600X</td>
+<td>最高2933MHz</td>
+<td>3.6GHz/4.2GHz</td>
+<td>95W</td>
+<td>Pinnacle Ridge6核心12线程 Zen+</td>
+</tr>
+<tr>
+<td>CPU散热</td>
+<td>AMD 幽灵Spire</td>
+<td>/</td>
+<td>/</td>
+<td>/</td>
+<td>2600X原装，不带灯</td>
+</tr>
+<tr>
+<td>主板</td>
+<td>华擎AB350-HDV</td>
+<td>3600+(oc)</td>
+<td>/</td>
+<td>/</td>
+<td>具备USB3.1、Sata3接口，支持Nvme的M.2接口</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>阿斯嘉特T2</td>
+<td>3000MHz</td>
+<td>16G DDR4</td>
+<td>/</td>
+<td>马甲条不带灯</td>
+</tr>
+<tr>
+<td>硬盘</td>
+<td>Tigo S300</td>
+<td>Sata3</td>
+<td>480G</td>
+<td>/</td>
+<td>/</td>
+</tr>
+<tr>
+<td>电源</td>
+<td>鑫谷GP600G</td>
+<td>/</td>
+<td>/</td>
+<td>500W</td>
+<td>非模组</td>
+</tr>
+</tbody>
+</table>
+<h1 id="实施">实施</h1>
+<h2 id="1采购">1.采购</h2>
+<ul>
+<li>CPU：选择2600X的原因是看到有人在闲鱼上出售仅拆封的2600X盒装带风扇，由于不想超频，原装应该压得住，699的价格还算可以了，用起来相对安心吧；</li>
+<li>主板：闲鱼上169+6块运费，没有底座和挡板。淘宝上搜了下正好有家店铺有这两件，直接两边都下单了；底座是9.9，挡板6块，合成本一共190.9；</li>
+<li>电源：附近城市的兄弟卖160，聊了下给包了个邮过来，到手非常新，跟描述一致；由于只有电源本体，没有电源线，所以15.9在京东搞了一根绿联1.5m的；</li>
+<li>内存：京东上339，领了plus会员200-10优惠券，最终329拿下。不算便宜，但现在闲鱼上一堆传家宝都卖到300块了，实在不想去费口舌。另外狗东的保修还是很重要的；</li>
+<li>硬盘：这个不用多说，直接拔就行了。前段时间正好弄了个32G的U盘，插上去糊弄一下矿机。以前迅雷的玩客云就可以直接插8GU盘，收益居然一点不掉🤣如果糊弄不过去，就再收个二手硬盘插上；</li>
+<li>显卡：机器都装完了才想起来2600x没有核显点不亮机器，最后淘宝找了个卖家收了块华硕GTX760 2G用来玩GTA5，花了385块；</li>
+<li>机箱：本来想买富士康的MATX带USB3.0接口小机箱，在桌子下面没什么存在感，只要65块钱，能节省下不少预算；但逛闲鱼的时候看别人侧透机箱中了毒，觉得放在家里的设备还是每天看着赏心悦目一点比较要紧，最后一咬牙在拼多多买了九州风扇魔方110白色，一共184块。京东仓发的货，当天下午就到了；</li>
+<li>机箱风扇：淘宝上找了家做杂牌静音风扇的店，双圈白光，平均单只不到12块；</li>
+</ul>
+<h2 id="2安装">2.安装</h2>
+<ul>
+<li>CPU：2600X这的种送低端散热风扇，安装的时候除了大力出奇迹没有别的办法；加上买的CPU底座是塑料的，材质整体偏软，装完散热风扇主板都弯了；</li>
+<li>主板：由于九州风神这个机箱内部的铜柱是镶好的，装起来比较省力；</li>
+<li>显卡：显卡只有20公分左右长，机箱上的显卡支架位置不合适，所以还需要再找个东西把显卡顶起来；</li>
+<li>机箱风扇：这个很好装，但是走线火葬场。。。</li>
+</ul>
+<h1 id="决算">决算</h1>
+<table>
+<thead>
+<tr>
+<th><strong>部件</strong></th>
+<th><strong>品牌</strong></th>
+<th><strong>型号</strong></th>
+<th><strong>价格</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>AMD</td>
+<td>Ryezn 2600X盒装带风扇</td>
+<td>699</td>
+</tr>
+<tr>
+<td>主板</td>
+<td>华擎</td>
+<td>AB350-HDV</td>
+<td>175</td>
+</tr>
+<tr>
+<td>主板挡板</td>
+<td>淘宝订制</td>
+<td>AB350-HDV</td>
+<td>6</td>
+</tr>
+<tr>
+<td>风扇底座</td>
+<td>淘宝订制</td>
+<td>AM4</td>
+<td>9.9</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>阿斯嘉特</td>
+<td>T2 16G DDR4 3000MHz</td>
+<td>329</td>
+</tr>
+<tr>
+<td>硬盘</td>
+<td>Tigo</td>
+<td>S300 Sata3 480G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>显卡</td>
+<td>华硕</td>
+<td>GTX760 2G</td>
+<td>385</td>
+</tr>
+<tr>
+<td>机箱</td>
+<td>九州风神</td>
+<td>魔方110白色</td>
+<td>184</td>
+</tr>
+<tr>
+<td>电源</td>
+<td>鑫谷</td>
+<td>GP600G 500W</td>
+<td>160</td>
+</tr>
+<tr>
+<td>机箱风扇</td>
+<td>杂牌</td>
+<td>12CM*6只，约1300转</td>
+<td>64</td>
+</tr>
+<tr>
+<td>开机棒</td>
+<td>蒲公英</td>
+<td>X1 本来就有的VPN设备</td>
+<td>0</td>
+</tr>
+<tr>
+<td>总计</td>
+<td>/</td>
+<td>/</td>
+<td>2011.9</td>
+</tr>
+</tbody>
+</table>
+<p>超出预算11.9完成任务。上机后一次点亮，运行稳定，完美。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[pythonchanllenge练习记录]]></title>
         <id>https://eilox.github.io/post/pythonchanllenge/</id>
         <link href="https://eilox.github.io/post/pythonchanllenge/">
         </link>
