@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eilox.github.io</id>
     <title>Edge</title>
-    <updated>2021-04-08T02:08:45.335Z</updated>
+    <updated>2021-06-23T06:45:47.903Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eilox.github.io"/>
     <link rel="self" href="https://eilox.github.io/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://eilox.github.io/images/avatar.png</logo>
     <icon>https://eilox.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Edge</rights>
+    <entry>
+        <title type="html"><![CDATA[6月23日复盘——天灾人祸？]]></title>
+        <id>https://eilox.github.io/post/6-yue-23-ri-fu-pan-tian-zai-ren-huo/</id>
+        <link href="https://eilox.github.io/post/6-yue-23-ri-fu-pan-tian-zai-ren-huo/">
+        </link>
+        <updated>2021-06-23T06:17:39.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>6月9日</strong> 我尾盘25.46入了603098森特股份，属于BIPV概念。当时考虑跟大佬操作做个当周的短线。大佬的策略是当周五没破新高就扔掉，而我忘了。<br>
+<strong>6月20日</strong> 看群内信息，大佬准备拿5%仓位。<br>
+<strong>6月21日</strong> 该股价格基本回落到我的购入价，于是分别以25.61、26.45各甩掉了一半仓位。分两批甩掉的原因是忘了看自己的持仓数量，以为在25.61卖光了。<br>
+当日，关于农村的BIPV的政策下来了。<br>
+<strong>6月22日、23日</strong> 已经两连板了。</p>
+<p>我看到6月21日晚消息的时候就已经觉得有点后悔了，第二天尾盘发现打板之后就更不爽了，把其称为“天灾人祸”。今天再看，又打板了，又觉得A股就是“政策市”，自己没有什么办法。<br>
+现在稍稍有点醒悟了，怎么没有办法。</p>
+<p><strong>首先</strong>，为什么着急卖？因为21日怕绿，怕收益变成负的。这是本能的恐惧感，本能地躲避损失，这与之前默认拿住的策略不符。理智在对抗人性中落了下风。<br>
+<strong>其次</strong>，既然有风口为什么不抓？23日开盘没有打板为什么不抢？但这是一句马后炮。</p>
+<p>那么现在，问自己一个问题<strong>如果明天开盘没有打板，抢不抢？</strong><br>
+答案是，<strong>既然决定相信大佬，今晚看大佬判断。</strong></p>
+<p>两个教训，一个是<strong>对抗人性</strong>，一个是<strong>坚守纪律</strong>。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[AM4平台装机的第二次尝试]]></title>
         <id>https://eilox.github.io/post/am4-ping-tai-zhuang-ji-de-di-er-ci-chang-shi/</id>
