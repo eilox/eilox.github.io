@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eilox.github.io</id>
     <title>Edge</title>
-    <updated>2021-06-24T01:32:07.821Z</updated>
+    <updated>2021-06-25T07:43:39.572Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eilox.github.io"/>
     <link rel="self" href="https://eilox.github.io/atom.xml"/>
@@ -11,7 +11,25 @@
     <icon>https://eilox.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Edge</rights>
     <entry>
-        <title type="html"><![CDATA[6月23日复盘——天灾人祸？]]></title>
+        <title type="html"><![CDATA[【投资复盘】6月24日——历史性时刻并不诗意]]></title>
+        <id>https://eilox.github.io/post/tou-zi-fu-pan-6-yue-24-ri-li-shi-xing-shi-ke-bing-bu-shi-yi/</id>
+        <link href="https://eilox.github.io/post/tou-zi-fu-pan-6-yue-24-ri-li-shi-xing-shi-ke-bing-bu-shi-yi/">
+        </link>
+        <updated>2021-06-25T02:18:24.000Z</updated>
+        <content type="html"><![CDATA[<p>最近一直比较关注币圈的矿卡问题，因为我今年年初装台式机的时候就深受其害。</p>
+<p>从各种报导来看，矿工们的文化水平不低，遣词造句能力可比肩高考满分作文作者。但是这并不能掩盖拉闸这件事给我们带来的负面情绪——国家已经启用强制措施了。虽然挖矿这个产业现在部分用的是弃电，但产业的底层逻辑其实跟控制碳排放的大方向是相违背的。现在币给我的感觉就像是drug，是维护国家尊严的过程中必须严打的对象。</p>
+<p>消息称，矿工们正在将产业转移到云南老乡家里，甚至到了美国，不出意外的话主要目标会是德州。德州的电力产能和市场化程度很高，据说基本没有冗余装机量，也就是说不需要为备份发电能力付出额外的电费溢价。有报导说，有一部分矿机设备流向了马里兰州，查了下应该是因为该州从06年以来一直在大力发展光伏发电。如果上述情况属实且多数矿工采用这种方式处理，那么矿工们并不需要大规模甩货来规避损失，也就不会有过量的矿卡流入市场。虽然不排除一些出不起国的小矿场破产导致矿卡流入市场，但我相信大部分矿主在过去的一段时间里利润相当可观，不会轻易放弃这门生意；同时行业内部的重组和整合也能推动多个小矿场联合出逃海外。对此我的基本判断是，由于这次与以往”矿难“的基本逻辑不同，矿主的情绪整体上不会太悲观。</p>
+<p>按照B站胖虎的说法，即使有矿卡进入市场，先消化它们的应该是整机作坊和网吧（而且即使网吧想通过洗白获取价差，也得有一两周的时间才能流通出来），很难轮到普通用户。也就是说，<strong>只要大多数矿工有序退出国内</strong>，短期来看四川拉闸这件事并不会很大程度上影响市面上卡的价格。至于”大多数矿工有序退出国内“如何判断，主要需要关注以下两点：</p>
+<ol>
+<li>关注<strong>甘肃、新疆、云南等弃电量大的地区是否近期有关于拉闸的新闻</strong>。不光四川，所有的弃电量大、存在大量矿工的地区都会陆续对矿场开刀；</li>
+<li>关注全网算力的变化情况。按媒体说法，四川拉闸当天全网算力下降了36%，视全网算力的恢复情况和恢复时长，就能大致推算出矿工们的动作。</li>
+</ol>
+<hr>
+<p>关于**603098森特股份，没什么好说的，又板了两天，今天很多人已经卖出离场了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【投资复盘】6月23日——天灾人祸？]]></title>
         <id>https://eilox.github.io/post/6-yue-23-ri-fu-pan-tian-zai-ren-huo/</id>
         <link href="https://eilox.github.io/post/6-yue-23-ri-fu-pan-tian-zai-ren-huo/">
         </link>
