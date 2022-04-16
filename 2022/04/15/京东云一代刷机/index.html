@@ -1,92 +1,202 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一 确认方案1.1 确定刷机方式目前版本号是2.3.14及以下，可以不拆机。之前的教程说法都是2.3.4及以下的固件版本可以开ssh刷机，但其实现在已经有了2.3.14降级至2.3.4教程，做完后再根据开ssh刷breed的教程做，不需要再拆机了。目前版本号是2.3.15的，必须得拆机了。我的版本已经自动升了2.3.15，因此拆机直接刷芯片。 1.2 确认芯片可能由于恩山论坛和京东官方的关系比较好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="京东云路由一代64G(坐享其成)拆机刷breed全流程">
+<meta property="og:url" content="http://example.com/2022/04/15/%E4%BA%AC%E4%B8%9C%E4%BA%91%E4%B8%80%E4%BB%A3%E5%88%B7%E6%9C%BA/index.html">
+<meta property="og:site_name" content="&lt; Edge 边缘 &#x2F;&gt; ">
+<meta property="og:description" content="一 确认方案1.1 确定刷机方式目前版本号是2.3.14及以下，可以不拆机。之前的教程说法都是2.3.4及以下的固件版本可以开ssh刷机，但其实现在已经有了2.3.14降级至2.3.4教程，做完后再根据开ssh刷breed的教程做，不需要再拆机了。目前版本号是2.3.15的，必须得拆机了。我的版本已经自动升了2.3.15，因此拆机直接刷芯片。 1.2 确认芯片可能由于恩山论坛和京东官方的关系比较好">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.postimg.cc/6qhY9fRW/1.jpg">
+<meta property="article:published_time" content="2022-04-15T06:14:12.000Z">
+<meta property="article:modified_time" content="2022-04-16T06:14:53.520Z">
+<meta property="article:author" content="Erik Chiang">
+<meta property="article:tag" content="路由器 刷机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/6qhY9fRW/1.jpg">
+
+<link rel="canonical" href="http://example.com/2022/04/15/%E4%BA%AC%E4%B8%9C%E4%BA%91%E4%B8%80%E4%BB%A3%E5%88%B7%E6%9C%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>京东云路由一代64G(坐享其成)拆机刷breed全流程 | < Edge 边缘 /> </title>
   
-  <title>京东云一代(坐享其成)拆机刷breed全流程 | &lt; Edge 边缘 /&gt;  | 向时代的边缘疯狂奔跑</title>
-
-  
-  <meta name="author" content="Erik Chiang">
-  
-
-  
-  <meta name="description" content="一 确认方案1.1 确定刷机方式目前版本号是2.3.14及以下，可以不拆机。之前的教程说法都是2.3.4及以下的固件版本可以开ssh刷机，但其实现在已经有了2.3.14降级至2.3.4教程，做完后再根据开ssh刷breed的教程做，不需要再拆机了。目前版本号是2.3.15的，必须得拆机了。我的版本已经自动升了2.3.15，因此拆机直接刷芯片。
-1.2 确认芯片可能由于恩山论坛和京东官方的关系比较好，目前在恩山很难找到完整的刷机教程，而之前找到的一篇石墨文档里刷机过程也写的粗，因此需要提前搞清楚刷机过程中的各项参数，自行发挥。根据acwifi《京东云无线宝拆机，能挖京豆吗？》一文中提供的拆机图，芯片应该是winbond的W25Q256JVFQ，容量32MB，也就是型号里256的意义（256Mbit）。">
-  
-
-  
-  
-  <meta name="keywords" content="路由器 刷机">
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta property="og:title" content="京东云一代(坐享其成)拆机刷breed全流程"/>
-
-  <meta property="og:site_name" content="&lt; Edge 边缘 /&gt; "/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="&lt; Edge 边缘 /&gt; " type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-<meta name="generator" content="Hexo 5.4.2"></head>
 
 
-<body>
-<div class="blog">
-  <div class="content">
 
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">&lt; Edge 边缘 /&gt; </a>
-    </h1>
-    <p class="site-description">向时代的边缘疯狂奔跑</p>
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
-  <nav class="site-navigation">
-    <ul>
-      
-        <li><a href="/">主页</a></li>
-      
-        <li><a href="/archives">归档</a></li>
-      
-        <li><a href="/categories">分类</a></li>
-      
-        <li><a href="/tags">标签</a></li>
-      
-    </ul>
-  </nav>
-</header>
 
-    <main class="site-main posts-loop">
-    <article>
+  <div class="site-meta">
 
-  
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">< Edge 边缘 /> </h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">向时代的边缘疯狂奔跑</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
     
-    <h3 class="article-title"><span>京东云一代(坐享其成)拆机刷breed全流程</span></h3>
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
     
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/15/%E4%BA%AC%E4%B8%9C%E4%BA%91%E4%B8%80%E4%BB%A3%E5%88%B7%E6%9C%BA/">
 
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2022/04/15/京东云一代刷机/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-04-15T06:14:12.000Z">
-          2022-04-15
-        </time>
-      </a>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Erik Chiang">
+      <meta itemprop="description" content="">
     </span>
-  </div>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="< Edge 边缘 /> ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          京东云路由一代64G(坐享其成)拆机刷breed全流程
+        </h1>
 
-  
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-  <div class="article-content">
-    <div class="entry">
+              <time title="创建时间：2022-04-15 14:14:12" itemprop="dateCreated datePublished" datetime="2022-04-15T14:14:12+08:00">2022-04-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-16 14:14:53" itemprop="dateModified" datetime="2022-04-16T14:14:53+08:00">2022-04-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
         <h1 id="一-确认方案"><a href="#一-确认方案" class="headerlink" title="一 确认方案"></a>一 确认方案</h1><h2 id="1-1-确定刷机方式"><a href="#1-1-确定刷机方式" class="headerlink" title="1.1 确定刷机方式"></a>1.1 确定刷机方式</h2><p>目前版本号是2.3.14及以下，可以不拆机。之前的教程说法都是2.3.4及以下的固件版本可以开ssh刷机，但其实现在已经有了<a target="_blank" rel="noopener" href="https://www.right.com.cn/FORUM/forum.php?mod=viewthread&tid=8028543&highlight=%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD+%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD">2.3.14降级至2.3.4教程</a>，做完后再根据开ssh刷breed的教程做，不需要再拆机了。<br>目前版本号是2.3.15的，必须得拆机了。我的版本已经自动升了2.3.15，因此拆机直接刷芯片。</p>
 <h2 id="1-2-确认芯片"><a href="#1-2-确认芯片" class="headerlink" title="1.2 确认芯片"></a>1.2 确认芯片</h2><p>可能由于恩山论坛和京东官方的关系比较好，目前在恩山很难找到完整的刷机教程，而之前找到的一篇石墨文档里刷机过程也写的粗，因此需要提前搞清楚刷机过程中的各项参数，自行发挥。<br>根据acwifi<a target="_blank" rel="noopener" href="https://www.acwifi.net/8839.html">《京东云无线宝拆机，能挖京豆吗？》</a>一文中提供的拆机图，芯片应该是winbond的W25Q256JVFQ，容量32MB，也就是型号里256的意义（256Mbit）。</p>
@@ -104,7 +214,7 @@
 <li>有些编程器套餐里会送夹子，一定提前问好夹子是几口的。我们要刷写的芯片是16口的，且需要连接的8个引脚分别位于芯片的四个角上，因此我们需要购买的是16口测试夹。</li>
 <li>有能力自己手动拆芯片，或者在芯片上焊接线的，可以不用买测试夹。不过还是建议买，主要是省事。</li>
 </ul>
-<h3 id="1-3-3-下载软件"><a href="#1-3-3-下载软件" class="headerlink" title="1.3.3 下载软件"></a>1.3.3 下载软件</h3><p>以“CH341A编程器软件”为关键词可以搜索到很多下载站提供编程器软件下载，我下载的是1.29破解版的。<br>这些编程器软件很多都是经过了一些爱好者或者淘宝卖家的魔改，可能会有些奇奇怪怪的问题（比如驱动装不上）。所以下载后解压，先安装一下解压后文件夹里的驱动，看是否能够正常安装，如果不能正常安装建议换一个站点重新下载一个。</p>
+<h3 id="1-3-3-下载软件"><a href="#1-3-3-下载软件" class="headerlink" title="1.3.3 下载软件"></a>1.3.3 下载软件</h3><p>以“CH341A编程器软件”为关键词可以搜索到很多下载站提供编程器软件下载，我下载的是1.29破解版的。<br>这些编程器软件很多都是经过了一些爱好者或者淘宝卖家的魔改，可能会有些奇奇怪怪的问题（比如驱动装不上）。所以下载后解压，先安装一下解压后文件夹里的驱动，看是否能够正常安装，如果不能正常安装建议换一个站点重新下载一个。另外，B站有<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv9588876">大佬自制版的CH341A编程器软件</a>，并且添加了京东云一代的W25Q256JV的支持，经过测试可以正常刷写breed，也可以下载使用。</p>
 <h3 id="1-3-4-上机测试"><a href="#1-3-4-上机测试" class="headerlink" title="1.3.4 上机测试"></a>1.3.4 上机测试</h3><p>这部主要是测试编程器上机后软件是否能正确识别。<br>将CH341A插入计算机的USB口，打开编程器软件，软件的右下角的<strong>设备连接状态</strong>如果显示“已连接”，证明驱动没有问题，没有连接异常。<br>如果计算机能够识别到硬件、CH341A板子上的灯能够正常亮起（如果有灯的话），那么可以优先考虑是软件或者驱动有问题，可以换一个站点下载软件再安装驱动试试。</p>
 <hr>
 <h1 id="二-刷breed操作"><a href="#二-刷breed操作" class="headerlink" title="二 刷breed操作"></a>二 刷breed操作</h1><h2 id="2-1-拆机"><a href="#2-1-拆机" class="headerlink" title="2.1 拆机"></a>2.1 拆机</h2><h3 id="2-1-1-确认硬件版本"><a href="#2-1-1-确认硬件版本" class="headerlink" title="2.1.1 确认硬件版本"></a>2.1.1 确认硬件版本</h3><p>查看路由器底部的“产品型号”，确认是否为<strong>RE-SP-01B</strong>，如果不是，建议找其他教程参考刷机。</p>
@@ -120,7 +230,7 @@
 <p>图片占位</p>
 <h2 id="2-3-刷入breed"><a href="#2-3-刷入breed" class="headerlink" title="2.3 刷入breed"></a>2.3 刷入breed</h2><h3 id="2-3-1-设置编程器软件"><a href="#2-3-1-设置编程器软件" class="headerlink" title="2.3.1 设置编程器软件"></a>2.3.1 设置编程器软件</h3><p>打开编程器软件，先设置好芯片类型。设置方法有三种，随意选其中的一种即可：</p>
 <ul>
-<li>芯片类型选择<strong>SPI 25</strong>（或类似的25芯片）、品牌选择<strong>WINDBOND</strong>、型号选择<strong>W25Q256JV</strong>（注意这个地方是选择256的，不是32的，因为选择的容量应该是页容量）；</li>
+<li>芯片类型选择<strong>SPI 25</strong>（或类似的25芯片）、品牌选择<strong>WINBOND</strong>、型号选择<strong>W25Q256JV</strong>（注意这个地方是选择256的，不是32的，因为选择的容量应该是页容量）；</li>
 <li>如果感觉上述方式眼花，点击编程器软件界面上的<strong>自动检测</strong>，软件可以检测出W25Q256FV、W25Q256JV两个型号，选择尾号是JV的型号即可；</li>
 <li>如果上述两个方式不好用，芯片选择<strong>SPI 25</strong>、品牌选<strong>COMMON</strong>、型号选择<strong>32x256</strong></li>
 </ul>
@@ -155,30 +265,170 @@
 <h1 id="三-刷系统固件"><a href="#三-刷系统固件" class="headerlink" title="三 刷系统固件"></a>三 刷系统固件</h1><p>和其他breed刷机一样，选择<strong>系统固件</strong>，上传对应的固件刷机，完成后路由器自动重启，参照固件说明书观察路由器顶灯状态。例如：<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-2846333-1-1.html">恩山SkyFervor的OpenWRT固件</a>刷写好后启动为先蓝灯长亮，随即转为蓝灯闪烁。蓝灯闪烁一段时间后，转为绿灯长亮即可使用。<br>如果刷写失败，或需要刷写其他固件，按住路由器reset键上电开机，访问192.168.1.1即可进入breed。</p>
 <p>完。</p>
 
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/路由器-刷机/">路由器 刷机</a>
-    </span>
-    
-
     </div>
 
     
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8-%E5%88%B7%E6%9C%BA/" rel="tag"># 路由器 刷机</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/13/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/" rel="prev" title="Markdown语法展示效果测试">
+      <i class="fa fa-chevron-left"></i> Markdown语法展示效果测试
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
-</article>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E7%A1%AE%E8%AE%A4%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">一 确认方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E7%A1%AE%E5%AE%9A%E5%88%B7%E6%9C%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 确定刷机方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E7%A1%AE%E8%AE%A4%E8%8A%AF%E7%89%87"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 确认芯片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%87%86%E5%A4%87%E7%BC%96%E7%A8%8B%E5%99%A8%E8%BD%AF%E7%A1%AC%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 准备编程器软硬件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-%E8%B4%AD%E4%B9%B0%E6%B8%85%E5%8D%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 购买清单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E7%A1%AC%E4%BB%B6%E8%B4%AD%E4%B9%B0%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 硬件购买注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3 下载软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-%E4%B8%8A%E6%9C%BA%E6%B5%8B%E8%AF%95"><span class="nav-number">1.3.4.</span> <span class="nav-text">1.3.4 上机测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-%E5%88%B7breed%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">二 刷breed操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E6%8B%86%E6%9C%BA"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 拆机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-%E7%A1%AE%E8%AE%A4%E7%A1%AC%E4%BB%B6%E7%89%88%E6%9C%AC"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 确认硬件版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-%E6%8B%86%E9%99%A4%E5%BA%95%E7%9B%96"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 拆除底盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-%E6%8B%86%E9%99%A4%E8%9E%BA%E4%B8%9D"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.1.3 拆除螺丝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-4-%E6%92%AC%E5%BC%80%E5%BA%95%E7%9B%96"><span class="nav-number">2.1.4.</span> <span class="nav-text">2.1.4 撬开底盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-5-%E6%8B%86%E6%9C%BA%E7%BB%93%E6%9D%9F"><span class="nav-number">2.1.5.</span> <span class="nav-text">2.1.5 拆机结束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E8%BF%9E%E6%8E%A5%E7%BC%96%E7%A8%8B%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 连接编程器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-%E8%BF%9E%E6%8E%A5%E8%BD%AC%E6%8E%A5%E6%9D%BF%E5%92%8C%E6%9D%9C%E9%82%A6%E7%BA%BF"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 连接转接板和杜邦线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E8%BF%9E%E6%8E%A5%E6%B5%8B%E8%AF%95%E5%A4%B9%E5%92%8C%E6%9D%9C%E9%82%A6%E7%BA%BF"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 连接测试夹和杜邦线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-%E8%BF%9E%E6%8E%A5%E8%BD%AC%E6%8E%A5%E6%9D%BF%E5%92%8C%E7%BC%96%E7%A8%8B%E5%99%A8"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3 连接转接板和编程器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E5%88%B7%E5%85%A5breed"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 刷入breed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E8%AE%BE%E7%BD%AE%E7%BC%96%E7%A8%8B%E5%99%A8%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1 设置编程器软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-%E8%AF%BB%E5%8F%96%E6%B5%8B%E8%AF%95-%E5%A4%87%E4%BB%BD%E7%BC%96%E7%A8%8B%E5%99%A8%E5%9B%BA%E4%BB%B6"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2 读取测试+备份编程器固件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-%E6%93%A6%E9%99%A4%E3%80%81%E5%88%B7%E5%85%A5%E3%80%81%E6%A0%A1%E9%AA%8C"><span class="nav-number">2.3.3.</span> <span class="nav-text">2.3.3 擦除、刷入、校验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E8%AE%BE%E7%BD%AE%E4%BF%9D%E6%8A%A4breed"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 设置保护breed</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-%E5%88%B7%E7%B3%BB%E7%BB%9F%E5%9B%BA%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">三 刷系统固件</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Erik Chiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erik Chiang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
 
   
 
@@ -187,21 +437,18 @@
 
 
 
-    </main>
 
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2022 Erik Chiang
-    
-  </p>
-</footer>
-    
-    
-  </div>
-</div>
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>
