@@ -27,14 +27,27 @@
 <meta property="og:site_name" content="&lt; Edge 边缘 &#x2F;&gt; ">
 <meta property="og:description" content="一 确认方案1.1 确定刷机方式目前版本号是2.3.14及以下，可以不拆机。之前的教程说法都是2.3.4及以下的固件版本可以开ssh刷机，但其实现在已经有了2.3.14降级至2.3.4教程，做完后再根据开ssh刷breed的教程做，不需要再拆机了。目前版本号是2.3.15的，必须得拆机了。我的版本已经自动升了2.3.15，因此拆机直接刷芯片。 1.2 确认芯片可能由于恩山论坛和京东官方的关系比较好">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://postimg.cc/9w2PkKsZ">
+<meta property="og:image" content="https://i.postimg.cc/90RxDjp8/2022-04-17-101153.png">
+<meta property="og:image" content="https://i.postimg.cc/BvpZV54c/20220417100447.jpg">
 <meta property="og:image" content="https://i.postimg.cc/6qhY9fRW/1.jpg">
+<meta property="og:image" content="https://i.postimg.cc/DZzfkWzV/202204171004471.jpg">
+<meta property="og:image" content="https://i.postimg.cc/t4h4hQcc/202204171004472.jpg">
+<meta property="og:image" content="https://i.postimg.cc/yYC5DkM0/2022-04-15-212941.png">
+<meta property="og:image" content="https://i.postimg.cc/QMCY257Z/2022-04-15-212919.png">
+<meta property="og:image" content="https://i.postimg.cc/0ycHXZbC/2022-04-15-213859.png">
+<meta property="og:image" content="https://i.postimg.cc/QdXyqvxt/2022-04-15-221711.png">
+<meta property="og:image" content="https://i.postimg.cc/8cRZRm2M/2022-04-15-225005.png">
+<meta property="og:image" content="https://i.postimg.cc/Hx7Zxg3S/2022-04-15-224952.png">
+<meta property="og:image" content="https://i.postimg.cc/x8DsN449/2022-04-15-225135.png">
+<meta property="og:image" content="https://i.postimg.cc/MKYsXtb8/2022-04-15-225157.png">
+<meta property="og:image" content="https://i.postimg.cc/bYkVfqZr/2022-04-15-225417.png">
+<meta property="og:image" content="https://i.postimg.cc/02vW8hSf/2022-04-15-225429.png">
 <meta property="article:published_time" content="2022-04-15T06:14:12.000Z">
-<meta property="article:modified_time" content="2022-04-17T02:26:40.917Z">
+<meta property="article:modified_time" content="2022-04-17T02:47:04.648Z">
 <meta property="article:author" content="Erik Chiang">
 <meta property="article:tag" content="路由器 刷机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://postimg.cc/9w2PkKsZ">
+<meta name="twitter:image" content="https://i.postimg.cc/90RxDjp8/2022-04-17-101153.png">
 
 <link rel="canonical" href="http://example.com/2022/04/15/%E4%BA%AC%E4%B8%9C%E4%BA%91%E4%B8%80%E4%BB%A3%E5%88%B7%E6%9C%BA/">
 
@@ -195,7 +208,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-17 10:26:40" itemprop="dateModified" datetime="2022-04-17T10:26:40+08:00">2022-04-17</time>
+                <time title="修改时间：2022-04-17 10:47:04" itemprop="dateModified" datetime="2022-04-17T10:47:04+08:00">2022-04-17</time>
               </span>
 
           
@@ -226,7 +239,7 @@
 <li>有能力自己手动拆芯片，或者在芯片上焊接线的，可以不用买测试夹。不过还是建议买，主要是省事。</li>
 </ul>
 <h3 id="1-3-3-下载软件"><a href="#1-3-3-下载软件" class="headerlink" title="1.3.3 下载软件"></a>1.3.3 下载软件</h3><p>以“CH341A编程器软件”为关键词可以搜索到很多下载站提供编程器软件下载，这些编程器软件很多都是经过了一些爱好者或者淘宝卖家的魔改，可能会有些奇奇怪怪的问题（比如驱动装不上）。所以下载后解压，先安装一下解压后文件夹里的驱动，看是否能够正常安装，如果不能正常安装建议换一个站点重新下载一个。另外，B站有<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv9588876">大佬自制版的CH341A编程器软件</a>，并且添加了京东云一代的W25Q256JV的支持，经过测试可以正常刷写breed。</p>
-<h3 id="1-3-4-上机测试"><a href="#1-3-4-上机测试" class="headerlink" title="1.3.4 上机测试"></a>1.3.4 上机测试</h3><p>这部主要是测试编程器上机后软件是否能正确识别。<br>将CH341A插入计算机的USB口，打开编程器软件，软件的右下角的<strong>设备连接状态</strong>如果显示“已连接”，证明驱动没有问题，没有连接异常。<br>如果计算机能够识别到硬件、CH341A板子上的灯能够正常亮起（如果有灯的话），那么可以优先考虑是软件或者驱动有问题，可以换一个站点下载软件再安装驱动试试。<br><a target="_blank" rel="noopener" href="https://postimg.cc/9w2PkKsZ"><img src="https://postimg.cc/9w2PkKsZ" alt="2022-04-17-101153.png"></a></p>
+<h3 id="1-3-4-上机测试"><a href="#1-3-4-上机测试" class="headerlink" title="1.3.4 上机测试"></a>1.3.4 上机测试</h3><p>这部主要是测试编程器上机后软件是否能正确识别。<br>将CH341A插入计算机的USB口，打开编程器软件，软件的右下角的<strong>设备连接状态</strong>如果显示“已连接”，证明驱动没有问题，没有连接异常。<br>如果计算机能够识别到硬件、CH341A板子上的灯能够正常亮起（如果有灯的话），那么可以优先考虑是软件或者驱动有问题，可以换一个站点下载软件再安装驱动试试。<br><a target="_blank" rel="noopener" href="https://postimg.cc/9w2PkKsZ"><img src="https://i.postimg.cc/90RxDjp8/2022-04-17-101153.png" alt="2022-04-17-101153.png"></a></p>
 <hr>
 <h1 id="二-刷breed操作"><a href="#二-刷breed操作" class="headerlink" title="二 刷breed操作"></a>二 刷breed操作</h1><h2 id="2-1-拆机"><a href="#2-1-拆机" class="headerlink" title="2.1 拆机"></a>2.1 拆机</h2><h3 id="2-1-1-确认硬件版本"><a href="#2-1-1-确认硬件版本" class="headerlink" title="2.1.1 确认硬件版本"></a>2.1.1 确认硬件版本</h3><p>查看路由器底部的“产品型号”，确认是否为<strong>RE-SP-01B</strong>，如果不是，建议找其他教程参考刷机。</p>
 <h3 id="2-1-2-拆除底盖"><a href="#2-1-2-拆除底盖" class="headerlink" title="2.1.2 拆除底盖"></a>2.1.2 拆除底盖</h3><p>京东云一代的底部有三颗螺丝，都位于胶垫后面。我拿到的这个路由器的胶垫是用双面胶粘在底盖上的，用小刀撬起来扯掉即可。如果是在扯不动，用风筒吹热后再扯。不过扯下来得胶垫有可能边长，装回去得时候可能需要裁剪一下。</p>
@@ -234,16 +247,23 @@
 <h3 id="2-1-4-撬开底盖"><a href="#2-1-4-撬开底盖" class="headerlink" title="2.1.4 撬开底盖"></a>2.1.4 撬开底盖</h3><p>底盖一共八个卡口，其中2个直扣、6个口字形的扣，比较难拆，看个人手法，6个口字形的扣被我掰断了4个。假设将底盖的标签正着面对自己，两个直扣卫位于标签底部对着的边，从这里开始插入撬片可能好拆一些。<br>如果家里有卡钳，也可以考虑微微将路由器外壳挤变形，然后插入撬片拆开。没有卡钳的也可以考虑用门挤（我没开玩笑）。事实证明，这种方式在很多难拆的桶装设备上有奇效。</p>
 <h3 id="2-1-5-拆机结束"><a href="#2-1-5-拆机结束" class="headerlink" title="2.1.5 拆机结束"></a>2.1.5 拆机结束</h3><p>至此已经可以开始连接编程器刷breed了，如果需要查看或者更换其他硬件，拆除四颗支架螺丝、拔掉顶灯小板排线，即可将路由器主体和外壳分开。</p>
 <h2 id="2-2-连接编程器"><a href="#2-2-连接编程器" class="headerlink" title="2.2 连接编程器"></a>2.2 连接编程器</h2><p>这步要把路由器芯片和编程器用转接板和杜邦线连接起来。原则是测试夹和转接板要按规则点对点连接，连接规则会在2.2.2中给出。</p>
-<h3 id="2-2-1-连接转接板和杜邦线"><a href="#2-2-1-连接转接板和杜邦线" class="headerlink" title="2.2.1 连接转接板和杜邦线"></a>2.2.1 连接转接板和杜邦线</h3><p>从杜邦线的两头按顺序各接4根先到转接板的8个针上，只要按顺序接上就可以，这步很简单。不按顺序接也行，只要按规则连就不会出错。</p>
+<h3 id="2-2-1-连接转接板和杜邦线"><a href="#2-2-1-连接转接板和杜邦线" class="headerlink" title="2.2.1 连接转接板和杜邦线"></a>2.2.1 连接转接板和杜邦线</h3><p>从杜邦线的两头按顺序各接4根先到转接板的8个针上，只要按顺序接上就可以，这步很简单。不按顺序接也行，只要按规则连就不会出错。<br><a target="_blank" rel="noopener" href="https://postimg.cc/wttdtmt7"><img src="https://i.postimg.cc/BvpZV54c/20220417100447.jpg" alt="20220417100447.jpg"></a></p>
 <h3 id="2-2-2-连接测试夹和杜邦线"><a href="#2-2-2-连接测试夹和杜邦线" class="headerlink" title="2.2.2 连接测试夹和杜邦线"></a>2.2.2 连接测试夹和杜邦线</h3><p>连接测试夹时，需要参考下图的芯片引脚转接规则。这张图中黑色的是芯片引脚编号，红色的是转接板上的编号。对照转接板上的标号，一根线一根线的确认，然后连接到测试夹引脚上。</p>
 <p><a target="_blank" rel="noopener" href="https://postimg.cc/0KbpnmcF"><img src="https://i.postimg.cc/6qhY9fRW/1.jpg" alt="芯片引脚转接规则"></a></p>
+<p>接好后应该是这样的：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/kVkPWg8w"><img src="https://i.postimg.cc/DZzfkWzV/202204171004471.jpg" alt="202204171004471.jpg"></a></p>
 <h3 id="2-2-3-连接转接板和编程器"><a href="#2-2-3-连接转接板和编程器" class="headerlink" title="2.2.3 连接转接板和编程器"></a>2.2.3 连接转接板和编程器</h3><p>编程器侧面的铡打开，将转接板标号4的阵脚朝向编程器有USB口的方向插入，插到底后放下铡即可。如图：</p>
-<p>图片占位</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/5X2JVGb5"><img src="https://i.postimg.cc/t4h4hQcc/202204171004472.jpg" alt="202204171004472.jpg"></a></p>
 <h2 id="2-3-刷入breed"><a href="#2-3-刷入breed" class="headerlink" title="2.3 刷入breed"></a>2.3 刷入breed</h2><h3 id="2-3-1-设置编程器软件"><a href="#2-3-1-设置编程器软件" class="headerlink" title="2.3.1 设置编程器软件"></a>2.3.1 设置编程器软件</h3><p>打开编程器软件，先设置好芯片类型。设置方法有三种，随意选其中的一种即可：</p>
 <ul>
-<li>芯片类型选择<strong>SPI 25</strong>（或类似的25芯片）、品牌选择<strong>WINBOND</strong>、型号选择<strong>W25Q256JV</strong>（注意这个地方是选择256的，不是32的，因为选择的容量应该是页容量）；</li>
-<li>如果感觉上述方式眼花，点击编程器软件界面上的<strong>自动检测</strong>，软件可以检测出W25Q256FV、W25Q256JV两个型号，选择尾号是JV的型号即可；</li>
-<li>如果上述两个方式不好用，芯片选择<strong>SPI 25</strong>、品牌选<strong>COMMON</strong>、型号选择<strong>32x256</strong></li>
+<li><p>芯片类型选择<strong>25 SPI Flash</strong>（这个地方一般只有24、25两个选项，所以跟我这里提到的名字不一样不要紧，大胆选25）、品牌选择<strong>WINBOND</strong>、型号选择<strong>W25Q256JV</strong>（注意这个地方是选择256的，不是32的，因为选择的容量应该是页容量）；</p>
+</li>
+<li><p>如果感觉上述方式眼花，点击编程器软件界面上的<strong>自动检测</strong>，软件可以检测出W25Q256FV、W25Q256JV两个型号，选择尾号是JV的型号即可；</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://postimg.cc/w3FFPTTB"><img src="https://i.postimg.cc/yYC5DkM0/2022-04-15-212941.png" alt="2022-04-15-212941.png"></a></p>
+</li>
+<li><p>如果上述两个方式不好用，芯片选择<strong>SPI 25</strong>、品牌选<strong>COMMON</strong>、型号选择<strong>25x256</strong></p>
+</li>
 </ul>
 <h3 id="2-3-2-读取测试-备份编程器固件"><a href="#2-3-2-读取测试-备份编程器固件" class="headerlink" title="2.3.2 读取测试+备份编程器固件"></a>2.3.2 读取测试+备份编程器固件</h3><p>选好型号后，点击读取，看是否能够正常读取。正常读取时软件会显示进度条或进度提示文字，hex显示的部分会更新出来读取的内容。</p>
 <p>如果软件提示不能读取，hex显示的部分是一片“FF”，证明有地方连接有问题，逐一检查：</p>
@@ -254,7 +274,8 @@
 <li>杜邦线两头是否插好</li>
 <li>测试夹上的触点是否夹在了芯片引脚上、是否存在引脚不平导致没有夹上<br>如果上述问题都没有，可能是你买的CH341A的电压不足，建议参考<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-329662-1-1.html">大佬文章给芯片加电压</a>后再刷breed。</li>
 </ul>
-<p>如果然面读取正常，待软件读取完后点<strong>备份固件</strong>，将编程器固件保存成bin格式备用。这个主要是防止刷机后不能使用。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/PLGMZCKS"><img src="https://i.postimg.cc/QMCY257Z/2022-04-15-212919.png" alt="2022-04-15-212919.png"></a></p>
+<p>如果然面读取正常，待软件读取完后点<strong>备份固件</strong>或者<strong>保存</strong>（不同软件可能显示的按钮名称不一样），将编程器固件保存成bin格式备用。这个主要是防止刷机后不能使用。</p>
 <h3 id="2-3-3-擦除、刷入、校验"><a href="#2-3-3-擦除、刷入、校验" class="headerlink" title="2.3.3 擦除、刷入、校验"></a>2.3.3 擦除、刷入、校验</h3><p>编程器软件上点击<strong>打开</strong>，选择breed固件（务必提前确认breed固件文件对应设备型号）。编程器打开固件后，可以选择如下两种方式：</p>
 <ul>
 <li><strong>手动方式：</strong><ol>
@@ -265,15 +286,22 @@
 </li>
 <li><strong>自动方式（如果你的编程器软件有这个功能）：</strong>选择breed后，点击<strong>自动</strong>，软件会自动完成擦除、写入、校验这三个步骤，全部做完的时间大概在20分钟。校验完成后，也有可能弹出校验报错，但实际可用的情况，需要测试。</li>
 </ul>
-<p>上述步骤做完后，退出软件，断开编程器，准备路由器上电测试。</p>
-<h2 id="2-4-设置保护breed"><a href="#2-4-设置保护breed" class="headerlink" title="2.4 设置保护breed"></a>2.4 设置保护breed</h2><p>编程器刷写breed成功后，上电开机，如果此时已连接顶灯小板，可以看到顶灯先是亮白灯，随即转为蓝灯闪烁。网线连接路由器和计算机，打开浏览器，输入192.168.1.1可以成功进入breed。按如下步骤设置breed：</p>
+<p>中间可能涉及到的提示、报错：</p>
+<ul>
+<li>烧录内容小于芯片容量：这是写入前的正常提示，说的是你选的固件比芯片的容量要小，烧录完固件内容后其他地方填充为FF，选择确定即可；<br><a target="_blank" rel="noopener" href="https://postimg.cc/MnfDv70c"><img src="https://i.postimg.cc/0ycHXZbC/2022-04-15-213859.png" alt="2022-04-15-213859.png"></a></li>
+<li>索引超出数组界限：一般是校验完成后出现这个报错，可能驱动有问题，我每次都报这个错误，但都能正常使用。<br><a target="_blank" rel="noopener" href="https://postimg.cc/zVc7zthZ"><img src="https://i.postimg.cc/QdXyqvxt/2022-04-15-221711.png" alt="2022-04-15-221711.png"></a><br>上述步骤做完后，退出软件，断开编程器，准备路由器上电测试。</li>
+</ul>
+<h2 id="2-4-设置保护breed"><a href="#2-4-设置保护breed" class="headerlink" title="2.4 设置保护breed"></a>2.4 设置保护breed</h2><p>编程器刷写breed成功后，上电开机，如果此时已连接顶灯小板，可以看到顶灯先是亮白灯，随即转为蓝灯闪烁。网线连接路由器和计算机，打开浏览器，输入192.168.1.1可以成功进入breed。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/rRpGcxFw"><img src="https://i.postimg.cc/8cRZRm2M/2022-04-15-225005.png" alt="2022-04-15-225005.png"></a></p>
+<p>按如下步骤设置breed：</p>
 <ol>
 <li>将<strong>环境变量</strong>设置为<strong>内部</strong>，保存后重启；</li>
-<li>将<strong>breed保护</strong>开启，保存后重启（如果不做上一步，这一步是无法设置的）；</li>
+<li><a target="_blank" rel="noopener" href="https://postimg.cc/0MPdWhTm"><img src="https://i.postimg.cc/Hx7Zxg3S/2022-04-15-224952.png" alt="2022-04-15-224952.png"></a></li>
+<li>将<strong>breed保护</strong>开启，保存后重启（如果不做上一步，这一步是无法设置的）；<br>开启时显示：<br><a target="_blank" rel="noopener" href="https://postimg.cc/jwc6GZT1"><img src="https://i.postimg.cc/x8DsN449/2022-04-15-225135.png" alt="2022-04-15-225135.png"></a><br>开启后显示：<br><a target="_blank" rel="noopener" href="https://postimg.cc/HVV0hwhS"><img src="https://i.postimg.cc/MKYsXtb8/2022-04-15-225157.png" alt="2022-04-15-225157.png"></a><br>这两步的意义是防止刷写固件导致breed丢失。</li>
 </ol>
-<p>这两步的意义是防止刷写固件导致breed丢失。</p>
 <hr>
-<h1 id="三-刷系统固件"><a href="#三-刷系统固件" class="headerlink" title="三 刷系统固件"></a>三 刷系统固件</h1><p>和其他breed刷机一样，选择<strong>系统固件</strong>，上传对应的固件刷机，完成后路由器自动重启，参照固件说明书观察路由器顶灯状态。例如：<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-2846333-1-1.html">恩山SkyFervor的OpenWRT固件</a>刷写好后启动为先蓝灯长亮，随即转为蓝灯闪烁。蓝灯闪烁一段时间后，转为绿灯长亮即可使用。<br>如果刷写失败，或需要刷写其他固件，按住路由器reset键上电开机，访问192.168.1.1即可进入breed。</p>
+<h1 id="三-刷系统固件"><a href="#三-刷系统固件" class="headerlink" title="三 刷系统固件"></a>三 刷系统固件</h1><p>和其他breed刷机一样，选择<strong>系统固件</strong>，上传对应的固件刷机，完成后路由器自动重启，参照固件说明书观察路由器顶灯状态。例如：<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-2846333-1-1.html">恩山SkyFervor的OpenWRT固件</a>、<a target="_blank" rel="noopener" href="https://opt.cn2qq.com/padavan/">老毛子的Padavan</a>(进入页面后搜索JDC-1_3.4.3.9-099.trx，实测这一版是不支持KVR的)刷写好后启动为先蓝灯长亮，随即转为蓝灯闪烁。蓝灯闪烁一段时间后，转为绿灯长亮即可使用。<br>如果刷写失败，或需要刷写其他固件，按住路由器reset键上电开机，访问192.168.1.1即可进入breed。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/14Rrphc1"><img src="https://i.postimg.cc/bYkVfqZr/2022-04-15-225417.png" alt="2022-04-15-225417.png"></a><br><a target="_blank" rel="noopener" href="https://postimg.cc/jC8QcgZw"><img src="https://i.postimg.cc/02vW8hSf/2022-04-15-225429.png" alt="2022-04-15-225429.png"></a></p>
 <p>完。</p>
 
     </div>
